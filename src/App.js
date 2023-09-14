@@ -53,36 +53,46 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="sidebar">
-        <FriendList
-          friendList={friendList}
-          selectedFriend={selectedFriend}
-          onSelection={handleSelectedFriend}
-        />
-
-        {showAddFriend &&
-          <AddFriendForm
-            friendList={friendList}
-            onSetFriendList={setFriendList}
-          />
-        }
-
-        <Button onClick={handleClicking}>
-          {
-            showAddFriend ?
-              "Close" : "Add Friend"
-          }
-        </Button>
+    <main>
+      <div style={{ textAlign: "center", margin: "3rem auto 5rem" }}>
+        <h1 style={{ fontSize: "32px", color: "#ff922b" }}>Eat n Split App</h1>
+        <h3>
+          Split your bills, <span style={{ color: "green" }}>credit</span> and <span style={{ color: "red" }}>credit.</span>
+        </h3>
       </div>
 
-      {selectedFriend &&
-        <SplitBillForm
-          selectedFriend={selectedFriend}
-          onSplitBill={splitBill}
-          key={selectedFriend.id}
-        />}
-    </div>
+      <div className="app">
+
+        <div className="sidebar">
+          <FriendList
+            friendList={friendList}
+            selectedFriend={selectedFriend}
+            onSelection={handleSelectedFriend}
+          />
+
+          {showAddFriend &&
+            <AddFriendForm
+              friendList={friendList}
+              onSetFriendList={setFriendList}
+            />
+          }
+
+          <Button onClick={handleClicking}>
+            {
+              showAddFriend ?
+                "Close" : "Add Friend"
+            }
+          </Button>
+        </div>
+
+        {selectedFriend &&
+          <SplitBillForm
+            selectedFriend={selectedFriend}
+            onSplitBill={splitBill}
+            key={selectedFriend.id}
+          />}
+      </div>
+    </main>
   );
 }
 
