@@ -3,6 +3,7 @@
 ## Live Demo
 To check out the live demo, [click here.](https://blackdreamer15.github.io/Eat-n-Split/)
 
+
 ## Preview
 
 <figure class="video_container">
